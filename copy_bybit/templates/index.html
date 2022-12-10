@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="theme-color" content="#111111">
+      <title>New Site</title>
+      <link rel="preload" href="static/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+      <link rel="preload" href="static/fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin>
+      <link rel="preload" href="static/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+      <link rel="preload" href="static/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+      <link rel="stylesheet" href="static/css/vendor.css">
+      <link rel="stylesheet" href="static/css/main.css">
+      <script defer="defer" src="static/js/main.js"></script>
+   </head>
+   <body class="page__body">
+      <div class="site-container">
+         <main class="main">
+            <section class="hero">
+               <header class="header">
+                  <div class="container header__container">
+                     <div class="header-navigation">
+                        <a href="./index.html" class="header__logo"><img src="/static/img/logo.svg" alt="" width="40px" height="40px" class="logo"> OSIRIS</a>
+                        <div class="header__dashboard" data-menu>
+                           <nav class="menu">
+                              <ul class="menu__list list-reset">
+                                 <li class="menu__item"><a href="/index" class="menu__link menu__link--active">Home</a></li>
+                                 <li class="menu__item"><a href="/login" class="menu__link">Login</a></li>
+                                 <li class="menu__item"><a href="/store" class="menu__link">Store</a></li>
+                              </ul>
+                           </nav>
+                           <fieldset class="switcher">
+                              <legend class="switcher__legend">Схема</legend>
+                              <input class="switcher__radio switcher__radio--dark" type="checkbox" name="color-scheme" value="dark" aria-label="Тёмная">
+                           </fieldset>
+                           <div class="header__login">
+                              <p class="header__user">Account</p>
+                           </div>
+                        </div>
+                        <button class="burger" aria-label="Открыть меню" aria-expanded="false" data-burger><span class="burger__line"></span></button>
+                     </div>
+                  </div>
+               </header>
+               <div class="container hero__container">
+                  <form class="form form-api" id="form" method="post">
+                     <legend class="form-legend">Добавить</legend>
+                     <label class="form-label">
+                        <p class="form-label__text">API Key</p>
+                        <input tabindex="5" class="questions__input input-reset" type="text" id="api-key" name="api-key">
+                     </label>
+                     <label class="form-label form-label__password">
+                        <p class="form-label__text">Secret Key</p>
+                        <input tabindex="6" class="questions__input input-reset" type="text" id="secret-key" name="secret-key">
+                     </label>
+                     <button tabindex="7" type="submit" class="questions__submit btn-reset">Добавить</button>
+                  </form>
+               </div>
+            </section>
+         </main>
+      </div>
+   </body>
+</html>

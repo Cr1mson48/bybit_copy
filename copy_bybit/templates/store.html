@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="theme-color" content="#111111">
+      <title>New Site</title>
+      <link rel="preload" href="static/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+      <link rel="preload" href="static/fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin>
+      <link rel="preload" href="static/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+      <link rel="preload" href="static/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+      <link rel="stylesheet" href="static/css/vendor.css">
+      <link rel="stylesheet" href="static/css/main.css">
+      <script defer="defer" src="static/js/main.js"></script>
+   </head>
+   <body class="page__body">
+      <div class="site-container">
+         <main class="main">
+            <section class="hero">
+               <header class="header">
+                  <div class="container header__container">
+                     <div class="header-navigation">
+                        <a href="./index.html" class="header__logo"><img src="/static/img/logo.svg" alt="" width="40px" height="40px" class="logo"> OSIRIS</a>
+                        <div class="header__dashboard" data-menu>
+                           <nav class="menu">
+                              <ul class="menu__list list-reset">
+                                 <li class="menu__item"><a href="/index" class="menu__link menu__link--active">Home</a></li>
+                                 <li class="menu__item"><a href="/login" class="menu__link">Login</a></li>
+                                 <li class="menu__item"><a href="/store" class="menu__link">Store</a></li>
+                              </ul>
+                           </nav>
+                           <fieldset class="switcher">
+                              <legend class="switcher__legend">Схема</legend>
+                              <input class="switcher__radio switcher__radio--dark" type="checkbox" name="color-scheme" value="dark" aria-label="Тёмная">
+                           </fieldset>
+                           <div class="header__login">
+                              <p class="header__user">Account</p>
+                           </div>
+                        </div>
+                        <button class="burger" aria-label="Открыть меню" aria-expanded="false" data-burger><span class="burger__line"></span></button>
+                     </div>
+                  </div>
+               </header>
+               <div class="container hero__container">
+                  <div class="hero__disappears disappears">
+                     <h1 class="disappears__title">Сделки</h1>
+                     <div class="disappears__content">
+                        <div class="disappears__column">
+                           <h2 class="disappears__column-title">Пары</h2>
+                           <ul class="disappears__list list-reset">
+                              {% for el in orders %}
+                              <li class="disappears__item">{{ el.symbol }}</li>
+                              {% endfor %}
+                           </ul>
+                        </div>
+                        <div class="disappears__column">
+                           <h2 class="disappears__column-title">Прибыль/Убыток</h2>
+                           <ul class="disappears__list list-reset">
+                              {% for el in orders %}
+                              <li class="disappears__item disappears__item-red">{{ el.profit }}</li>
+                              {% endfor %}
+                           </ul>
+                        </div>
+                        <div class="disappears__column">
+                           <h2 class="disappears__column-title">Стоимость</h2>
+                           <ul class="disappears__list list-reset">
+                              {% for el in orders %}
+                              <li class="disappears__item">{{ el.qty }}</li>
+                              {% endfor %}
+                           </ul>
+                        </div>
+                        <div class="disappears__column">
+                           <h2 class="disappears__column-title">Цена входа</h2>
+                           <ul class="disappears__list list-reset">
+                              {% for el in orders %}
+                              <li class="disappears__item">{{ el.price_input }}</li>
+                              {% endfor %}
+                           </ul>
+                        </div>
+                        <div class="disappears__column">
+                           <h2 class="disappears__column-title">Цена маркировки</h2>
+                           <ul class="disappears__list list-reset">
+                              {% for el in orders %}
+                              <li class="disappears__item">{{ el.price_mark }}</li>
+                              {% endfor %}
+                           </ul>
+                        </div>
+                        <div class="disappears__column">
+                           <h2 class="disappears__column-title">Тип сделки</h2>
+                           <ul class="disappears__list list-reset">
+                              {% for el in orders %}
+                              <li class="disappears__item">{{ el.side }}</li>
+                              {% endfor %}
+                           </ul>
+                        </div>
+                        <div class="disappears__column">
+                           <h2 class="disappears__column-title">Статус</h2>
+                           <ul class="disappears__list list-reset">
+                              {% for el in orders %}
+                              <li class="disappears__item">{{ el.status }}</li>
+                              {% endfor %}
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+   </body>
+</html>
